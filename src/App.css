@@ -1,38 +1,114 @@
-.App {
-  text-align: center;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+	padding: 15px;
+	margin-bottom: 15px;
+	background-color: #ff9fe7;
+	position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header * {
+	margin-right: 15px;
+	height: 40px;
+	border-radius: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header input {
+	font-size: 20px;
+	padding-left: 10px;
+	width: 35vw;
+	border: none;
 }
 
-.App-link {
-  color: #61dafb;
+.header input:focus {
+	border: 2px solid #529b7e;
+	outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header :nth-child(2) {
+	background-color: transparent;
+	border: 3px solid currentColor;
+	color: #fff;
+	padding: 10px 20px;
+	transition: all 150ms ease-in;
+}
+
+.header :nth-child(2):hover {
+	background-color: #529b7e;
+	border-color: #529b7e;
+}
+
+.header :last-child {
+	background-color: transparent;
+	color: #fff;
+	padding: 0;
+}
+
+.todo-container div {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	padding: 15px;
+	padding-bottom: 0;
+}
+
+.todo-container div label {
+	max-width: 270px;
+	word-wrap: break-word;
+	display: flex;
+}
+
+.todo-container div label input {
+	-webkit-appearance: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 20px;
+	min-height: 20px;
+	max-width: 20px;
+	max-height: 20px;
+	margin-right: 10px;
+	border: 1px solid #000;
+}
+
+.todo-container div label input::before {
+	content: "";
+	display: none;
+	width: 72%;
+	height: 72%;
+	background-color: #529b7e;
+}
+
+.todo-container div label input:checked::before {
+	display: block;
+}
+
+hr {
+	margin: 15px 20px;
+}
+
+button {
+	background-color: #fff;
+	outline: none;
+	border: none;
+	cursor: pointer;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 575px) {
+	.header input {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.header :last-child {
+		position: absolute;
+		right: 0;
+	}
 }
